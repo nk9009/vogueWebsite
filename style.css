@@ -1,0 +1,321 @@
+:root {
+    --black-color: black;
+    --gray-color: gray;
+    --lightgray-color: lightgray;
+    --middle-font-size: 13px;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+    list-style: none;
+}
+
+/*---------------------header-----------------------*/
+
+header {
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+ul>li {
+    list-style: none;
+}
+
+.header_container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header_left {
+    display: flex;
+    padding-left: 150px;
+    margin-top: 0; /*margin이 왜 생기지?*/
+    margin-bottom: 0; /*margin이 왜 생기지?*/
+}
+
+.header_left li {
+    padding: 13px;
+    font-size: 18px;
+}
+
+.header_left a:hover {
+    opacity: 0.8;
+    /*--------------------------------------------*/
+
+}
+
+.header_left a {
+    color: var(--black-color)
+}
+
+.header_right {
+    display: flex;
+    margin-top: 0;
+    margin-bottom: 0;
+    position: relative;
+}
+
+.header_right {
+    color: var(--gray-color);
+    font-size: var(--middle-font-size);
+    margin: 0;
+    padding-left: 0;
+    align-items: center;
+    padding-right: 150px;
+}
+
+.header_right > li:first-child {
+    border-right: 1px solid var(--lightgray-color);
+}
+
+.header_right>li {
+    padding: 15px;
+}
+
+.header_right a {
+    color: var(--gray-color);
+}
+
+
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+
+}
+
+.cor_info {
+    position: absolute;
+    background: white;
+    top: 50px;
+    border: 1px solid var(--lightgray-color);
+    color: var(--gray-color);
+    font-size: 12px;
+    opacity: 0; /*평상시엔 안 보이도록*/
+    pointer-events: none; /*툴팁에 hover해도 event없도록*/
+    transition: opacity 0.15s;
+    width: 100px;
+    padding: 0 10px;
+}
+
+.tooltip:hover .cor_info {
+    opacity: 1;
+}
+
+.header_right .cor_info p {
+    margin: 0;
+    line-height: 28px;
+    transition: background-color 0.25s;
+}
+
+.header_right .cor_info p:hover {
+    background-color: var(--lightgray-color);
+}
+
+
+.logo_container {
+    text-align: center; /* 로고 가운데 정렬 */
+}
+
+
+.logo {
+}
+
+/*---------------------nav-----------------------*/
+
+nav {
+    font-family: 'Staatliches';
+    position: sticky;
+    z-index: 300;
+    top: 0;
+    background-color: white;
+}
+
+.nav_logo {
+    position: absolute;
+    width: 100px;
+    top: 12px;
+    left: 18px;
+    /*--------------------------------------------*/
+
+}
+
+
+.nav_container {
+    font-size: 19px;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding-left: 0;
+    border-bottom: 1px solid var(--lightgray-color);
+}
+
+.nav_container li {
+    padding: 15px 23px;
+}
+
+.nav_container a {
+    text-decoration: none;
+    color: var(--black-color);
+    transition: color 0.2s;
+}
+
+.nav_container a:hover {
+    color: red;
+    /*--------------------------------------------*/
+}
+
+/*---------------------main-----------------------*/
+main {
+    width: 1300px;
+    /* margin: 0 auto; */
+    background-color: yellowgreen;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+
+/*---------------------.home_content-----------------------*/
+
+.home_content {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-flow: row wrap; /*flex-direction, flex-wrap 단축 속성*/
+}
+
+.inner {
+    width: 100%;
+    transition: border 1s;
+    background: white;
+}
+
+.inner, .big_img {
+    display: block;
+    overflow: hidden; /*img 넘치는 부분을 가림.*/
+}
+
+.big_img {
+    /* 최대 크기를 부모 요소의 크기로 제한 */
+    /* max-width: 100%; */ /*이거 없애니까 평온.. */
+    width: 1300px;
+    /* height: auto; 원본 크기에 맞게 높이 조정  */
+}
+
+.inner:hover {
+    border: 20px solid #f00;
+}
+
+.inner:hover .big_img {
+    margin: -20px; /*border크기만큼 이미지를 바깥쪽으로 밀어내는 역할. 안쪽에 테두리가 쳐진 것처럼 보이도록 */
+}
+
+.home_content .main_ppl {
+    width: 100%;
+    position: relative;
+    /* text-align: center; */
+}
+
+.main_ppl .txt_absolute {
+    position: absolute;
+    /* z-index: 10; */
+    /* text-align: center; */
+    bottom: 5%;
+    left: 30%;
+    /* width: 100%; */
+    color: #fff;
+    /* padding: 0 50px; */
+    font-size: 40px; 
+}
+
+.small_ppl {
+    display: flex;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+}
+
+.inner2 {
+    width: 100%;
+    transition: border 0.5s;
+
+} 
+
+.img1, .img2, .img3, .img4, .img5, .img6 {
+    width: 100%;
+    height: 100%; /*이렇게 하니 이미지 사이즈가 세로로 똑같아짐*/
+}
+
+.inner2{
+    overflow: hidden;
+}
+
+.inner2:hover {
+    border: 20px solid red;
+}
+
+.inner2:hover .inner2 img {
+    margin: -20px; /*border크기만큼 이미지를 바깥쪽으로 밀어내는 역할. 안쪽에 테두리가 쳐진 것처럼 보이도록 */
+}
+
+
+
+/*---------------------footer-----------------------*/
+
+footer {
+    background-color: black;
+    padding-top: 70px;
+    padding-bottom: 70px;
+    font-family: 'Roboto', sans-serif;
+    width: 1300px;
+    margin: 0 auto;
+}
+
+footer a {
+    color: var(--gray-color);
+
+}
+
+.footer_container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    line-height: 20px;
+}
+
+.footer_container p {
+    color: var(--gray-color);
+    font-size: 11px;
+}
+
+.footer_logo {
+}
+
+.footer_info {
+    display: flex;
+}
+
+.footer_info a {
+    margin-right: 10px;
+    font-size: 12px;
+}
+
+.footer_info a:nth-child(4) {
+    margin-right: 0;
+}
+
+
+/*---------------------media query-----------------------*/
+@media screen and (max-width: 1220px){
+}
